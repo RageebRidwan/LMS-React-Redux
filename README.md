@@ -121,7 +121,7 @@ npm run dev
 
 ---
 
-## 🧱 Build & Deploy
+## 🧱 Build 
 
 To build for production:
 
