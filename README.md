@@ -1,69 +1,67 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📚 Minimal Library Management System
 
-Currently, two official plugins are available:
+A clean, responsive, and fully client-side Library Management System built using **React**, **TypeScript**, **Redux Toolkit Query**, **Tailwind CSS**, and **shadcn/ui**. The app allows users to view, add, edit, delete, and borrow books without any authentication or complex flows.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> ⚙️ Backend deployed at: [`https://library-management-api-m61d.onrender.com`](https://library-management-api-m61d.onrender.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. Public Access Routes
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- No login or authentication required.
+- All pages are open and accessible to any user.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 2. 📘 Book Management
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **List View** with sortable and clear table showing:
+  - Title, Author, Genre, ISBN, Copies, Availability, Actions.
+- **CRUD Operations**:
+  - ➕ **Add Book** – Clean form to add new books.
+  - ✏️ **Edit Book** – Pre-filled form to update details.
+  - 🗑️ **Delete Book** – Confirmation before deletion.
+  - 📚 **Borrow Book** – Quantity-based borrowing with due date.
+- **Business Logic**:
+  - If copies = 0 → the book becomes automatically unavailable.
+  - Editing book with 0 copies will also auto-set it as unavailable.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3. 🔄 Borrow Book
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Form accepts:
+  - 📦 Quantity (cannot exceed available copies)
+  - 📅 Due Date
+- Borrowing a book reduces the available count.
+- Redirects to borrow summary on success.
+
+### 4. 📊 Borrow Summary
+
+- Aggregated view of all borrowed books.
+- Columns:
+  - Book Title, ISBN, Total Quantity Borrowed
+
+---
+
+## 🧭 Navigation
+
+- **Navbar** includes:
+  - 🗂️ All Books
+  - ➕ Add Book
+  - 📈 Borrow Summary
+- **Footer** displays basic credits.
+
+---
+
+## 📁 Project Structure
+
+```bash
+📦 src
+├── components/ui       # Reusable UI elements (shadcn)
+├── layouts             # Main layout with Navbar & Footer
+├── pages               # All route-based pages
+├── redux               # API slices & RTK store
+├── types               # TypeScript types & interfaces
+├── utils               # Helper functions
+├── App.tsx / main.tsx  # Main entry points
 ```
