@@ -35,10 +35,10 @@ export default function EditBook() {
     "BIOGRAPHY",
     "FANTASY",
   ];
-
+  const bookData = (data as any).data;
   useEffect(() => {
-    if (data?.data) {
-      const b = data.data;
+    if (bookData) {
+      const b = bookData;
       setForm({
         title: b.title,
         author: b.author,

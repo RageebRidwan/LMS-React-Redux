@@ -23,7 +23,7 @@ export default function Borrow() {
   if (isLoading) return <p>Loading book details...</p>;
   if (isError || !bookData) return <p>Failed to load book info.</p>;
 
-  const book = bookData.data;
+  const book = (bookData as any).data;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

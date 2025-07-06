@@ -1,4 +1,3 @@
-import ThemeToggle from "@/components/ui/ThemeToggle";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function MainLayout() {

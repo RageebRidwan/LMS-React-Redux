@@ -11,7 +11,7 @@ export default function Books() {
   const { data, isLoading, isError } = useGetAllBooksQuery(undefined);
   const [deleteBook] = useDeleteBookMutation();
   const toast = useToast();
-  const books = data?.data ?? [];
+  const books = (data as any)?.data ?? [];
 
   const handleDelete = async (id: string) => {
     const confirmDelete = window.confirm("Delete this book?");

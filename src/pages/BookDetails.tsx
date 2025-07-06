@@ -10,7 +10,7 @@ export default function BookDetails() {
   if (isError || !data)
     return <p className="text-center text-red-500">Failed to load book.</p>;
 
-  const book = data.data;
+  const book = (data as any).data;
 
   return (
     <div className="max-w-2xl mx-auto p-6">

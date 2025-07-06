@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCreateBookMutation } from "@/redux/api/bookApi";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import type { Genre, BookForm } from "@/types";
+import type { BookForm } from "@/types";
 import { formatGenre } from "@/utils/helperFunc";
 
 export default function CreateBook() {
