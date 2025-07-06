@@ -10,7 +10,7 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // avoid hydration mismatch
+  if (!mounted) return null;
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 

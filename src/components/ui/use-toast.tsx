@@ -5,7 +5,7 @@ type Toast = {
   id: number;
   title: string;
   description?: string;
-  duration?: number; // ms
+  duration?: number;
 };
 
 type ToastContextType = {
@@ -27,7 +27,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     const newToast = { id: toastId, duration: 3000, ...toast };
     setToasts((prev) => [...prev, newToast]);
 
-    // Auto remove after duration
+
     setTimeout(() => {
       setToasts((prev) => prev.filter((t) => t.id !== newToast.id));
     }, newToast.duration);

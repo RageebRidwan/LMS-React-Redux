@@ -9,7 +9,7 @@ const store = configureStore({
     getDefaultMiddleware().concat(baseApi.middleware),
 });
 
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>; // Export a hook that can be reused to resolve types
 
 export default store;

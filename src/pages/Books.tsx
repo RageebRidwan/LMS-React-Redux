@@ -49,7 +49,7 @@ export default function Books() {
     <div className="p-6 bg-white rounded-lg shadow-sm">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
         <h2 className="text-2xl font-bold tracking-tight text-gray-800">
-          📚 All Books
+          📖 All Books
         </h2>
         <Link to="/create-book">
           <Button className="bg-indigo-600 hover:bg-indigo-700 text-white shadow">
@@ -72,7 +72,7 @@ export default function Books() {
             </tr>
           </thead>
           <tbody>
-            {books.map((book:any) => (
+            {books.map((book: any) => (
               <tr
                 key={book._id}
                 className="hover:bg-gray-50 transition border-t"
