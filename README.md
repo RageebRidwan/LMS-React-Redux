@@ -95,7 +95,7 @@ cd library-management
 npm install
 ```
 
-### 3. ⚙️ Configure API (Environment Variable)
+### 3. Configure API (Environment Variable)
 
 The frontend connects to the backend API using an environment variable.
 Create a .env file in the root of the project and add the following:
@@ -113,7 +113,31 @@ VITE_API_BASE_URL=http://localhost:<your_port>/api
 Note:
 Do not commit your .env file to GitHub. It's already ignored in .gitignore.
 
+### 4. Run Dev Server
+
+```bash
+npm run dev
+```
+
 ---
+
+## 🧱 Build & Deploy
+
+To build for production:
+
+```bash
+npm run build
+```
+
+To preview locally:
+
+```bash
+npm run preview
+```
+
+---
+
+
 
 
 
