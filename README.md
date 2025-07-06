@@ -103,10 +103,11 @@ Create a .env file in the root of the project and add the following:
 VITE_API_BASE_URL=https://library-management-api-m61d.onrender.com/api
 ```
 ✅ This will allow all RTK Query endpoints to use the correct API base automatically.
+
 🔁 If you're testing locally (with a locally running backend), you can change it to:
 
 ```env
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=http://localhost:<your_port>/api
 ```
 
 Note:
