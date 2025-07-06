@@ -70,13 +70,17 @@ A clean, responsive, and fully client-side Library Management System built using
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React + TypeScript
-- **State Management**: Redux Toolkit Query (RTK Query)
-- **Styling**: Tailwind CSS + Shadcn UI
-- **Routing**: React Router DOM
-- **Deployment**: Render
+| Category           | Technologies                             |
+|--------------------|-------------------------------------------|
+| **Frontend**       | React + TypeScript                        |
+| **State Management** | Redux Toolkit Query (RTK Query)          |
+| **Styling**        | Tailwind CSS + Shadcn UI                  |
+| **Routing**        | React Router DOM                          |
+| **Deployment**     | Render                                    |
 
 ---
+
+
 
 
 
