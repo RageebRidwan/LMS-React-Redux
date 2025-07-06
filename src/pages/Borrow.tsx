@@ -19,6 +19,7 @@ export default function Borrow() {
 
   const [quantity, setQuantity] = useState(1);
   const [dueDate, setDueDate] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   if (isLoading) return <p>Loading book details...</p>;
   if (isError || !bookData) return <p>Failed to load book info.</p>;
@@ -28,11 +29,15 @@ export default function Borrow() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (quantity < 1 || quantity > book.copies) {
-      toast({
-        title: "Invalid Quantity",
-        description: `You can borrow between 1 and ${book.copies} copies.`,
-      });
+    setErrorMessage("");
+
+    if (quantity < 1) {
+      setErrorMessage("Quantity must be at least 1.");
+      return;
+    }
+
+    if (quantity > book.copies) {
+      setErrorMessage("Not enough copies available.");
       return;
     }
 
@@ -79,12 +84,16 @@ export default function Borrow() {
             <input
               type="number"
               min={1}
-              max={book.copies}
               value={quantity}
               onChange={(e) => setQuantity(Number(e.target.value))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
+            {errorMessage && (
+              <p className="mt-1 text-sm text-red-600 font-semibold">
+                {errorMessage}
+              </p>
+            )}
           </div>
 
           <div>
