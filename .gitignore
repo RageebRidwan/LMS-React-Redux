@@ -26,5 +26,4 @@ dist-ssr
 .env
 components.json
 
-dist
 build
