@@ -6,7 +6,7 @@ import {
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import type { BookForm, ApiResponse } from "@/types";
+import type { BookForm } from "@/types";
 import { formatGenre } from "@/utils/helperFunc";
 
 export default function EditBook() {
