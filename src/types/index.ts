@@ -27,3 +27,6 @@ export type BookForm = {
   copies: number;
   available: boolean;
 };
+export type ApiResponse<T> = {
+  data: T;
+};
